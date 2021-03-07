@@ -1,0 +1,393 @@
+@charset "UTF-8";
+/* La feuille de style est encodée en Unicode UTF-8 */
+/*****************************************************************************************
+/* Fichier ...................... : @charset "UTF-8"; /* La feuille de style est encodée en Unicode UTF-8 */
+/*****************************************************************************************
+/* Fichier ...................... : style.css
+/* Type ......................... : Document CSS
+/* Titre ........................ : Demo d'un site de location de voiture
+/* Auteur ....................... : François Charles Hébert 
+/* Date de création ............. : 2020-10-01
+/*****************************************************************************************/
+
+/****************************************/
+/* Initialisation des variables couleur */
+/****************************************/
+:root{
+    --Rouge: #95474c;                   /*  (Lors du hover sur un menu)     */
+    --GrisFonce: #888887;               
+    --Background: #ededed;              /*  (arrière-plan)                  */
+    --Menu_Btn: #4c6c84;                /*  (menu et bouton)                */
+
+    --mainColor:white;                  /*  Couleur du main                 */
+    --textColor:black;
+    --Menu_hover: #95474c;
+}
+
+.dark-theme{
+    --Background: black;                /*  arrière-plan                    */
+    --mainColor:  #888887;              /*  Couleur du main                 */
+    --Menu_Btn: #95474c;                /*  menu et bouton                  */
+    --Menu_hover: #4c6c84;
+    --textColor:White;
+}
+
+/***************************************/
+/* Mise en forme de la page en général */
+/***************************************/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Calibri';
+}
+
+body{
+    background-color: var(--Background);
+}
+
+main,footer{
+    width: 980px;
+    margin: auto;
+}
+main{
+    min-height: 97vh;
+    background-color:var(--mainColor);
+}
+.center{
+    text-align:center;
+}
+.right{
+    float:right;
+    margin:10px;
+}
+h1,h2,h3{
+    text-align:center;
+}
+h1,h2,h3,p{
+    color:var(--textColor);
+}
+/***************************************/
+/*                MENU                 */
+/***************************************/
+nav{
+    width:100%;
+    text-align: center;
+    padding-top:25px;
+}
+nav ul{
+    width:100%;
+    height:50px;
+    display:flex;
+    background-color:var(--Menu_Btn);
+    list-style-type: none;
+}
+nav li{
+    width:25%;
+    border:1px solid black;
+    text-decoration:none; 
+}
+nav li a{
+    display:block;
+    max-height:100%;
+    color:white;
+    padding:13px;
+}
+nav li:hover{
+    background-color:var(--Menu_hover);
+}
+/***************************************/
+/*               HEADER                */
+/***************************************/
+header{
+    width:100%;
+}
+
+/***************************************/
+/*           FORMULAIRE REG            */
+/***************************************/
+.registerForm {
+    width:800px;
+    margin:auto;
+    padding:10px;
+    margin-bottom:10px;
+    background-color:var(--Background);
+}
+legend{
+    font-weight: bold;
+}
+input, label{
+    margin-top:10px;
+
+    text-align:left;
+}
+label{
+    display:inline-block;
+    text-align:left;
+    margin-right:5px;
+    width:85px;
+}
+input,select{
+    width:210px;
+    margin-right:60px;
+}
+input[id="nom"],input[id="province"],input[id="telephone"]{
+    width:250px;
+}
+
+#constructeurForm label, label[for="password"]{
+    width:125px;
+}
+#constructeurForm input{
+    width:180px;
+}
+#constructeurForm select{
+    width:175px;
+}
+input[type="checkbox"]{
+    width:10px;
+    margin:5px;
+}
+label[name="promotion"], label[name="modalite"]{
+   width:730px;
+}
+input[id="regSubmit"]{
+    float:right;
+    width:150px;
+    padding:5px;
+    color:white;
+    background-color:var(--Menu_Btn);
+    text-align:center;
+    margin:5px;
+}
+
+/***************************************/
+/*           FORMULAIRE LOGN           */
+/***************************************/
+.loginFieldset{
+    width:400px;
+    margin:auto;
+    padding:10px;
+    margin-bottom:10px;
+}
+.loginContainer{
+    text-align:center;
+}
+.loginContainer label{
+    display:inline-block;
+    width:116px;
+    text-align: left;
+}
+.loginContainer input{
+    margin:0;
+    width:150px;
+}
+#loginSubmit{
+    margin:10px;
+    text-align:center;
+    background-color: var(--Menu_Btn);
+    color:white;
+    padding:10px;
+    width:275px;
+}
+
+/***************************************/
+/*           FORMULAIRE REG            */
+/***************************************/
+.reservationContainer{
+    width:800px;
+    margin:auto;
+    padding-bottom:75px;
+}
+.reservationInfoContainer label, .reservationInfoContainer input[type="date"]{
+    width:140px;
+    margin-right:10px;
+}
+.reservationInfoContainer input[id="age"]{
+    width:50px;
+}
+hr{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.gridVoiture {
+    display:flex;
+    flex-wrap: wrap;
+}
+.gridVoiture img{
+    width:45%;
+    height:100px;
+    margin:10px;
+    vertical-align:middle;
+}
+.gridVoiture div{
+    width:50%;
+    padding:5px;
+}
+.gridVoiture div h2{
+    display:inline;
+}
+.gridVoiture input[type="radio"]{
+    margin:0;
+    width:10px;
+}
+#reservationSubmit{
+    float:right;
+    width:150px;
+    padding:5px;
+    color:white;
+    background-color:var(--Menu_Btn);
+    text-align:center;
+    margin:15px;
+}
+/***************************************/
+/*             TRAITEMENT              */
+/***************************************/
+.traitementRegNoFloat, .traitementReg{
+    padding-bottom: 20px;
+    width: 50%;
+    margin-left: 50px;
+}
+.traitementReg{
+    float: left;
+}
+.traitementReg li, .traitementRegNoFloat li{
+    margin-left:50px;
+    margin-top:10px;
+}
+.traitementReg .mainLi, .traitementRegNoFloat .mainLi{
+    margin-left:350px;
+}
+.boldFont{
+    font-weight: bold;
+}
+
+.mesReservationImg{
+    margin-left:20px;
+    text-align:left;
+    width:40%;
+}
+
+.deleteReservation{
+    display: inline-block;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: var(--Menu_Btn);
+    color: white;
+    text-decoration: none;
+}
+
+.description
+{
+    padding:2px;
+    text-align: center;
+    text-decoration: underline;
+}
+.descriptionContainer{
+    text-decoration: none;
+    text-align:left;
+    border:1px solid black;
+}
+.hide{
+    display:none;
+}
+.deleteContainer{
+    width:50%;
+}
+.btn_description{
+    border:0;
+    text-decoration:underline;
+    font-size: 15px;
+    padding:5px;
+    margin:5px;
+    margin-top:10px;
+}
+/***************************************/
+/*               VOITURES              */
+/***************************************/
+.voitureInfo{
+    height:300px;
+    margin:20px;
+}
+.voitureListe{
+    text-align:center;
+    padding:10px;
+}
+
+.voitureInfo img{
+    width:33.33%;
+    margin-right:50px;
+    float:left;
+    vertical-align:middle;
+}
+
+.voitureInfo p{
+    padding:20px;
+}
+
+.voitureInfo a{
+    padding-top:20px;
+}
+
+.filterContainer{
+    display:flex;
+    width:100%;
+    justify-content:center;
+}
+.filter {
+    margin:0;
+    margin-right:10px;
+}
+
+.filter input{
+    margin:0px;
+    width:150px;
+}
+.filter select{
+    margin-right:10px;
+    width:100px;
+}
+.filter select[name="categorie"]{
+    width:150px;
+    margin-right:10px;
+}
+
+#FilterButton{
+    margin:0;
+    width:60px;
+    height:40px;
+    padding:5px;
+    color:white;
+    background-color:var(--Menu_Btn);
+    text-align:center;
+    margin-left:15px;
+    margin-top:20px;
+}
+
+/***************************************/
+/*               FOOTER                */
+/***************************************/
+footer{
+    margin-top:10px;
+    font-size:12px;
+}
+.theme{
+    text-align:right;
+}
+#btn_theme{
+    width:75px;
+    height:35px;
+    background-color:var(--Menu_Btn);
+    color:white;
+    text-align:center;
+    margin:0;
+}
+#label_theme{
+    width:50px;
+    margin-right:2px;
+    color:var(--textColor);
+}
+
